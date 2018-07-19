@@ -1,6 +1,7 @@
 {
   "name": "travis-encrypt",
   "version": "0.1.0",
+  "homepage": "/travis-encrypt",
   "private": true,
   "dependencies": {
     "glamor": "^2.20.40",
