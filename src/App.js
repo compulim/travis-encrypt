@@ -95,7 +95,7 @@ class App extends Component {
 
   handleEncryptClick() {
     this.setState(
-      () => ({ busy: true, copied: false, error: null }),
+      () => ({ busy: true, cipherText: '', copied: false, error: null }),
       async () => {
         try {
           const { state } = this;
