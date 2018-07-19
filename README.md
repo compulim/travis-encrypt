@@ -2,6 +2,8 @@
 
 Simple React web app to encrypt secret for Travis CI.
 
+Inspired by [https://travis-encrypt.github.io/](https://travis-encrypt.github.io/).
+
 # Demo
 
 Try out at [https://compulim.github.io/travis-encrypt/](https://compulim.github.io/travis-encrypt/).

@@ -26,7 +26,7 @@ const ROOT_CSS = css({
     },
 
     '& > dd > textarea': {
-      height: '5em',
+      height: '15em',
       width: '50%'
     }
   }
