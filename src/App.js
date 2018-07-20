@@ -32,6 +32,13 @@ const ROOT_CSS = css({
   }
 });
 
+const GITHUB_RIBBON_CSS = css({
+  border: 0,
+  position: 'absolute',
+  right: 0,
+  top: 0
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -134,6 +141,14 @@ class App extends Component {
 
     return (
       <form className={ ROOT_CSS }>
+        <h1>travis-encrypt</h1>
+        <a href="https://github.com/compulim/travis-encrypt">
+          <img
+            alt="Fork me on GitHub"
+            className={ GITHUB_RIBBON_CSS }
+            src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+          />
+        </a>
         <dl>
           <label>
             <dt>GitHub username:</dt>
