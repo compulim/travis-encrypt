@@ -48,9 +48,9 @@ class App extends Component {
     this.plainTextRef = React.createRef();
 
     this.handleCopyClick = this.handleCopyClick.bind(this);
-    this.handleEncryptClick = this.handleEncryptClick.bind(this);
     this.handlePlainTextChange = this.handlePlainTextChange.bind(this);
     this.handleRepoChange = this.handleRepoChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUserChange = this.handleUserChange.bind(this);
 
     this.state = {
@@ -96,11 +96,9 @@ class App extends Component {
     this.setState(() => ({ repo: value }));
   }
 
-  handleUserChange({ target: { value } }) {
-    this.setState(() => ({ user: value }));
-  }
+  handleSubmit(event) {
+    event.preventDefault();
 
-  handleEncryptClick() {
     this.setState(
       () => ({ busy: true, cipherText: '', copied: false, error: null }),
       async () => {
@@ -136,11 +134,18 @@ class App extends Component {
     );
   }
 
+  handleUserChange({ target: { value } }) {
+    this.setState(() => ({ user: value }));
+  }
+
   render() {
     const { state } = this;
 
     return (
-      <form className={ ROOT_CSS }>
+      <form
+        className={ ROOT_CSS }
+        onSubmit={ this.handleSubmit }
+      >
         <h1>travis-encrypt</h1>
         <a href="https://github.com/compulim/travis-encrypt">
           <img
@@ -185,7 +190,6 @@ class App extends Component {
           <dd>
             <button
               disabled={ state.busy || !state.user || !state.repo || !state.plainText }
-              onClick={ this.handleEncryptClick }
             >
               { state.busy ? 'Encrypting...' : 'Encrypt' }
             </button>
