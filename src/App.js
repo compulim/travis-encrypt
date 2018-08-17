@@ -48,9 +48,9 @@ class App extends Component {
     this.plainTextRef = React.createRef();
 
     this.handleCopyClick = this.handleCopyClick.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePlainTextChange = this.handlePlainTextChange.bind(this);
     this.handleRepoChange = this.handleRepoChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUserChange = this.handleUserChange.bind(this);
 
     this.state = {
@@ -96,10 +96,6 @@ class App extends Component {
     this.setState(() => ({ repo: value }));
   }
 
-  handleUserChange({ target: { value } }) {
-    this.setState(() => ({ user: value }));
-  }
-
   handleSubmit(event) {
     event.preventDefault();
 
@@ -136,6 +132,10 @@ class App extends Component {
         }
       }
     );
+  }
+
+  handleUserChange({ target: { value } }) {
+    this.setState(() => ({ user: value }));
   }
 
   render() {
